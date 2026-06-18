@@ -1,5 +1,6 @@
 "use client";
 
+import EditorialSubheading from "@/components/EditorialSubheading";
 import { SectionHeader } from "@/components/SectionShell";
 import { PRODUCTS } from "@/lib/data";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -27,15 +28,23 @@ export default function Products() {
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
-          <SectionHeader
-            label="Machinery Portfolio"
-            title="Industrial Machines Built to Perform"
-            description="Engineered for accuracy, durability and efficiency across every production line."
-            light
-            accentLabel
-            align="left"
-            compact
-          />
+          <div>
+            <SectionHeader
+              label="Machinery Portfolio"
+              title="Industrial Machines Built to Perform"
+              light
+              accentLabel
+              align="left"
+              compact
+            />
+            <EditorialSubheading className="!mt-4 sm:!mt-5">
+              Engineered for{" "}
+              <span className="text-accent">accuracy</span>,{" "}
+              <span className="text-accent">durability</span> and{" "}
+              <span className="text-accent">efficiency</span> across{" "}
+              <span className="italic text-white">every production line</span>.
+            </EditorialSubheading>
+          </div>
 
           <div className="flex shrink-0 items-center gap-3">
             <button

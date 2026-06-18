@@ -1,6 +1,7 @@
 "use client";
 
 import Marquee from "@/components/effects/Marquee";
+import EditorialSubheading from "@/components/EditorialSubheading";
 import { SectionHeader } from "@/components/SectionShell";
 import { FEATURES } from "@/lib/data";
 import {
@@ -54,12 +55,16 @@ export default function WhyChooseUs() {
         <SectionHeader
           label="The Hydro Mech Edge"
           title="Why Industry Leaders Choose Us"
-          description="Six pillars of engineering excellence that set our machines apart from the competition."
           light
           accentLabel
           align="left"
           compact
         />
+        <EditorialSubheading>
+          <span className="text-accent">Six pillars</span> of{" "}
+          <span className="italic text-white">engineering excellence</span> that
+          set our machines apart from the competition.
+        </EditorialSubheading>
       </div>
 
       <div className="relative mt-10 bg-navy">

@@ -1,6 +1,7 @@
 "use client";
 
 import Marquee from "@/components/effects/Marquee";
+import EditorialSubheading from "@/components/EditorialSubheading";
 import { SectionHeader } from "@/components/SectionShell";
 import { Eye } from "lucide-react";
 import { motion } from "framer-motion";
@@ -32,12 +33,19 @@ export default function About() {
         <SectionHeader
           label="Our Story"
           title="Engineering Trust Through Every Machine"
-          description="A young company with an old-world commitment to quality, precision, and long-term partnerships."
           light
           accentLabel
           align="left"
           compact
         />
+
+        <EditorialSubheading>
+          A young company with an{" "}
+          <span className="italic text-white">old-world commitment</span> to{" "}
+          <span className="text-accent">quality</span>,{" "}
+          <span className="text-accent">precision</span>, and long-term
+          partnerships.
+        </EditorialSubheading>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

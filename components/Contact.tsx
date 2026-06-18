@@ -1,5 +1,6 @@
 "use client";
 
+import EditorialSubheading from "@/components/EditorialSubheading";
 import { SectionHeader } from "@/components/SectionShell";
 import { COMPANY } from "@/lib/data";
 import { Globe, Mail, MapPin, Phone, Send } from "lucide-react";
@@ -65,12 +66,19 @@ export default function Contact() {
             <SectionHeader
               label="Connect"
               title="Let's Engineer Your Next Machine"
-              description="Reach out for consultations, custom requirements, or after-sales support. We respond within one business day."
               light
               accentLabel
               align="left"
               compact
             />
+            <EditorialSubheading className="!mt-4 sm:!mt-5">
+              Reach out for{" "}
+              <span className="text-accent">consultations</span>,{" "}
+              <span className="text-accent">custom requirements</span>, or{" "}
+              <span className="text-accent">after-sales support</span>. We
+              respond{" "}
+              <span className="italic text-white">within one business day</span>.
+            </EditorialSubheading>
           </div>
 
           <div className="grid lg:grid-cols-2">
