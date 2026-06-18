@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# static assets (images not pushed to GitHub)
+/public/
+
 # production
 /build
 
