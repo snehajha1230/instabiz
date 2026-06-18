@@ -85,56 +85,112 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Abstract visual panel — no product images */}
+            {/* Blueprint machinery visual */}
             <motion.div
               style={{ scale: visualScale, opacity: visualOpacity }}
               className="relative mx-auto h-full w-full max-w-md sm:max-w-lg lg:mx-0 lg:max-w-none"
             >
-              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/15 to-primary/8 blur-3xl" />
-              <div className="relative h-full min-h-[22rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/8 via-primary/10 to-accent/15 ring-glow sm:min-h-[24rem]">
-                <div className="grid-pattern absolute inset-0 opacity-40" />
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10"
-                />
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-[50%] w-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/6"
-                />
+              <div className="absolute -inset-6 rounded-[2.25rem] bg-gradient-to-br from-accent/25 via-primary/12 to-transparent blur-3xl" />
+              <motion.div
+                animate={{ opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-px rounded-[1.8rem] bg-gradient-to-br from-accent/30 via-transparent to-primary/20"
+              />
 
-                <div className="relative flex h-full flex-col items-center justify-between gap-8 py-8 px-6 sm:py-10 sm:px-7">
+              <div className="relative flex h-full min-h-[26rem] flex-col sm:min-h-[30rem] lg:min-h-[34rem]">
+                <div className="relative flex-1 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#050d18] ring-glow">
                   <Image
-                    src={COMPANY.logo}
-                    alt={`${COMPANY.name} logo`}
-                    width={160}
-                    height={56}
-                    className="h-12 w-auto object-contain brightness-0 invert sm:h-14"
+                    src="/heroimage.png"
+                    alt="Precision sheet metal machinery engineering blueprint"
+                    fill
+                    className="object-contain object-center p-2 sm:p-3"
                     priority
+                    sizes="(max-width: 1024px) 100vw, 45vw"
                   />
 
-                  <div className="grid w-full gap-3">
-                    {PILLARS.map(({ icon: Icon, label, value }, i) => (
-                      <motion.div
-                        key={label}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5 + i * 0.12 }}
-                        className="glass-dark flex items-center gap-3 rounded-xl px-4 py-3"
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/20 text-accent">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="text-[0.6rem] font-bold tracking-[0.18em] text-white/40 uppercase">
-                            {label}
-                          </p>
-                          <p className="text-sm font-semibold text-white">{value}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-transparent to-navy/50" />
+                  <div className="grid-pattern pointer-events-none absolute inset-0 opacity-15" />
+
+                  <div
+                    className="pointer-events-none absolute top-5 left-5 h-9 w-9 border-t-2 border-l-2 border-accent/50"
+                    aria-hidden
+                  />
+                  <div
+                    className="pointer-events-none absolute top-5 right-5 h-9 w-9 border-t-2 border-r-2 border-accent/50"
+                    aria-hidden
+                  />
+                  <div
+                    className="pointer-events-none absolute bottom-20 left-5 h-9 w-9 border-b-2 border-l-2 border-accent/50 sm:bottom-24"
+                    aria-hidden
+                  />
+                  <div
+                    className="pointer-events-none absolute right-5 bottom-20 h-9 w-9 border-r-2 border-b-2 border-accent/50 sm:bottom-24"
+                    aria-hidden
+                  />
+
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.5 }}
+                    className="glass-dark absolute top-4 right-4 flex items-center gap-2 rounded-full px-3.5 py-1.5"
+                  >
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60 opacity-75" />
+                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+                    </span>
+                    <span className="text-[0.58rem] font-bold tracking-[0.2em] text-accent uppercase">
+                      Live Blueprint
+                    </span>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.55, duration: 0.5 }}
+                    className="glass-dark absolute top-1/2 left-3 hidden -translate-y-1/2 rounded-lg px-2.5 py-1.5 lg:block"
+                  >
+                    <p className="text-[0.55rem] font-bold tracking-[0.15em] text-white/35 uppercase">
+                      Height
+                    </p>
+                    <p className="font-mono text-xs font-semibold text-accent">2450 mm</p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.65, duration: 0.5 }}
+                    className="glass-dark absolute top-[38%] right-3 hidden rounded-lg px-2.5 py-1.5 lg:block"
+                  >
+                    <p className="text-[0.55rem] font-bold tracking-[0.15em] text-white/35 uppercase">
+                      Width
+                    </p>
+                    <p className="font-mono text-xs font-semibold text-accent">2150 mm</p>
+                  </motion.div>
+                </div>
+
+                <div className="relative z-10 -mt-14 grid gap-2 px-1 sm:-mt-16 sm:grid-cols-3 sm:gap-2.5">
+                  {PILLARS.map(({ icon: Icon, label, value }, i) => (
+                    <motion.div
+                      key={label}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
+                      className="glass-dark flex items-center gap-2.5 rounded-xl px-3.5 py-3 sm:flex-col sm:items-start sm:gap-2 sm:px-3 sm:py-3.5"
+                    >
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/20 text-accent sm:h-8 sm:w-8">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[0.55rem] font-bold tracking-[0.16em] text-white/40 uppercase">
+                          {label}
+                        </p>
+                        <p className="truncate text-sm font-semibold text-white sm:text-[0.8rem]">
+                          {value}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>
